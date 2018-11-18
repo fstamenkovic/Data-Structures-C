@@ -1,11 +1,11 @@
 linkedlist.out: main.o LinkedList.o
-    g++ -o linkedlist.out main.o LinkedList.o
+	g++ -o linkedlist.out main.o LinkedList.o
 
-LinkedList.o: LinkedList.cpp LinkedList.h
-    g++ -c LinkedList.cpp
+LinkedList.o:
+	g++ -g -c LinkedList.cpp
 
 main.o: main.cpp LinkedList.h
-    g++ -c main.cpp
+	g++ -g -c main.cpp -std=gnu++11
 
 clean:
-    rm -f linkedlist.out LinkedList.o main.o
+	rm -f main.o linkedlist.out LinkedList.o
